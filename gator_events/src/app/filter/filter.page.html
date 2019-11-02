@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Filter</ion-title>
+      <ion-icon name="close" slot="start" button="true" (click)="closeModal()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col text-center>
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating">Filter by: Organization</ion-label>
+            <ion-select>
+              <ion-select-option value="">All</ion-select-option>
+              <ion-select-option value="WiCSE">Women in Computer Science and Engineering</ion-select-option>
+              <ion-select-option value="SEC">Software Engineering Club</ion-select-option>
+              <ion-select-option value="UFSIT">Society of Information Technology</ion-select-option>
+              <ion-select-option value="GatorAnime">Gator Anime Club</ion-select-option>
+              <ion-select-option value="ACM">Association of Computing Machinery</ion-select-option>
+              <ion-select-option value="GatorVR">GatorVR</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Filter by: Time Frame</ion-label>
+            <ion-select>
+              <ion-select-option value="">All</ion-select-option>
+              <ion-select-option value="hour">Within next hour</ion-select-option>
+              <ion-select-option value="day">Within next day</ion-select-option>
+              <ion-select-option value="week">Within this week</ion-select-option>
+              <ion-select-option value="month">Within this month</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-col size="4">
+            <h5>Within </h5>
+          </ion-col>
+          <ion-col size="4">
+            <ion-item>
+              <ion-label  position="floating" color="primary">Filter by: Distance (Enter number)</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="4">
+            <h5> miles from </h5>
+          </ion-col>
+          <ion-item>
+            <ion-label>Use Current Location</ion-label>
+            <ion-radio slot="start" value="currlocation"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating" color="primary">Input Location</ion-label>
+            <ion-input type="text"></ion-input>
+            <ion-radio slot="start" value="location"></ion-radio>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <ion-button (click)="closeModal()">Filter</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

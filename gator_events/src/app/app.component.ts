@@ -20,6 +20,18 @@ export class AppComponent {
       title: 'List',
       url: '/list',
       icon: 'list'
+    },
+    {
+      /*Placeholder for calendar page*/
+      title: 'Calendar',
+      url: '/home',
+      icon: 'calendar'
+    },
+    {
+      /*Still need to implement logout functionality*/
+      title: 'Logout',
+      url: '/login',
+      icon: 'exit'
     }
   ];
 

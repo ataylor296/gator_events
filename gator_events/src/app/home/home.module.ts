@@ -3,8 +3,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
+import { FilterPageModule } from '../filter/filter.module';
 
 import { HomePage } from './home.page';
+import { FilterPage } from '../filter/filter.page';
 
 @NgModule({
   imports: [
@@ -18,6 +20,10 @@ import { HomePage } from './home.page';
       }
     ])
   ],
-  declarations: [HomePage]
+  entryComponents: [FilterPage],
+  declarations: [    
+    HomePage,
+    FilterPage
+  ]
 })
 export class HomePageModule {}

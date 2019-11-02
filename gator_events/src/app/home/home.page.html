@@ -1,15 +1,210 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Home
+      <ion-icon name="globe"></ion-icon>
+      Gator Events
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div class="ion-text-start">
+    <h3>Welcome to Gator Events</h3>
+    <h5>Find out about events going on all over campus. Use the 'Filter' button to narrow your selection.</h5>
+  </div>
+  <ion-button expand="full" color="primary" (click)="presentModal()">Filter Options</ion-button>
+  <p *ngIf="dataReturned">{{dataReturned}}</p>
+  
+  <ion-searchbar animated value="Search by name or tag"></ion-searchbar>
+  <ion-card button="true">
+      <ion-card-header>
+        <div class="datetime">Women in Computer Science and Engineering    |   CSE404    |   09/27/2019  |   6:00 PM</div>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-card-title>Mentorship Meet and Greet</ion-card-title>
+        <p>
+          Come meet club officers and make some new friends, with food provided! 
+        </p>
+        <ion-chip color="secondary" outline="true">
+          <ion-icon name="code-working" color="secondary"></ion-icon>
+          <ion-label>Computer Science</ion-label>
+        </ion-chip>
+      </ion-card-content>
+  </ion-card>
+  <ion-card button="true">
+      <ion-card-header>
+          <div class="datetime">Gator Anime Club    |   CSE212    |   10/03/2019  |   7:00 PM</div>      
+      </ion-card-header>
+      <ion-card-content>
+        <ion-card-title>Gator Anime Club Meeting</ion-card-title>
+        <p>
+
+        </p>
+        <p>
+          Come watch our weekly shows and learn some things about Japan! 
+        </p>
+        <!-- <ion-spinner *ngIf="!articles"  name="dots"></ion-spinner> -->
+        <ion-chip color="primary" outline="true">
+          <ion-icon name="tv" color="primary"></ion-icon>
+          <ion-label>Anime</ion-label>
+        </ion-chip>
+      </ion-card-content>
+  </ion-card>
+  <ion-card button="true">
+      <ion-card-header>
+          <div class="datetime">UF Software Engineering Club    |   NEB0111    |   10/02/2019  |   5:00 PM</div>      
+      </ion-card-header>
+      <ion-card-content>
+        <ion-card-title>GBM #3 - Angular and Cordova Demystified</ion-card-title>
+        <p>
+
+        </p>
+        <p>
+          Learn some things about the Angular framework, and how Cordova can make your life way easier
+        </p>
+        <ion-chip color="secondary" outline="true">
+          <ion-icon name="code-working" color="secondary"></ion-icon>
+          <ion-label>Computer Science</ion-label>
+        </ion-chip>
+      </ion-card-content>
+  </ion-card>
+  <ion-card button="true">
+    <ion-card-header>
+      <div class="datetime">Women in Computer Science and Engineering    |   CSE404    |   09/27/2019  |   6:00 PM</div>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-title>Mentorship Meet and Greet</ion-card-title>
+      <p>
+        Come meet club officers and make some new friends, with food provided! 
+      </p>
+      <ion-chip color="secondary" outline="true">
+        <ion-icon name="code-working" color="secondary"></ion-icon>
+        <ion-label>Computer Science</ion-label>
+      </ion-chip>
+    </ion-card-content>
+</ion-card>
+<ion-card button="true">
+    <ion-card-header>
+        <div class="datetime">Gator Anime Club    |   CSE212    |   10/03/2019  |   7:00 PM</div>      
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-title>Gator Anime Club Meeting</ion-card-title>
+      <p>
+
+      </p>
+      <p>
+        Come watch our weekly shows and learn some things about Japan! 
+      </p>
+      <!-- <ion-spinner *ngIf="!articles"  name="dots"></ion-spinner> -->
+      <ion-chip color="primary" outline="true">
+        <ion-icon name="tv" color="primary"></ion-icon>
+        <ion-label>Anime</ion-label>
+      </ion-chip>
+    </ion-card-content>
+</ion-card>
+<ion-card button="true">
+    <ion-card-header>
+        <div class="datetime">UF Software Engineering Club    |   NEB0111    |   10/02/2019  |   5:00 PM</div>      
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-title>GBM #3 - Angular and Cordova Demystified</ion-card-title>
+      <p>
+
+      </p>
+      <p>
+        Learn some things about the Angular framework, and how Cordova can make your life way easier
+      </p>
+      <ion-chip color="secondary" outline="true">
+        <ion-icon name="code-working" color="secondary"></ion-icon>
+        <ion-label>Computer Science</ion-label>
+      </ion-chip>
+    </ion-card-content>
+</ion-card>
+
+<ion-list>
+  <ion-item-sliding *ngFor="let item of events">
+    <!-- <ion-item lines= "inset" button [routerLink]="['/details', item.id]"> -->
+    <ion-item lines= "inset">
+      <ion-label>
+        {{ item.name }}
+        <p>{{ item.createdAt | date:'short' }}</p>
+      </ion-label>
+      <ion-note slot="end" color="primary">
+        {{ item.organization }}
+      </ion-note>
+    </ion-item>
+
+    <ion-item-options side="end">
+      <!-- <ion-item-option (click)="remove(item)" color=secondary> -->
+      <ion-item-option color=secondary>
+        Check
+        <ion-icon name="checkmark" slot="end"></ion-icon>
+      </ion-item-option>
+    </ion-item-options> 
+  </ion-item-sliding>
+</ion-list>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <!-- <ion-fab-button routerLink="/details">
+    
+  </ion-fab-button> -->
+</ion-fab>
+
+
+
+  <!-- <ion-list>
+    <ion-item-sliding *ngFor="let item of events">
+      <ion-icon [name]="item.icon" slot="start"></ion-icon>
+      {{item.title}}
+      <div class="item-note" slot="end">
+        {{item.note}}
+      </div>
+    </ion-item>
+  </ion-list> -->
+
+  <!-- <ion-list>
+    <ion-item button="true" detail>
+      <ion-label>
+        Beginning of the Semester Meet and Greet
+      </ion-label>
+      <div class="item-note" slot="end">
+        Come meet our officers, have some good food, and make some even better friends!
+      </div>
+    </ion-item>
+    <ion-item color="primary" button="true" lines="inline" detail>
+      <ion-row>
+      <h6>
+        Women in Computer Science and Engineering (WiCSE)
+      </h6>
+      </ion-row>
+      <ion-row>
+      <h5>
+        Beginning of the Semester Meet and Greet
+      </h5>
+      </ion-row>
+      <div class="item-note" slot="end">
+        Tue, Oct 18th, 2019 7:00 PM   
+      </div>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Select</ion-label>
+      <ion-select>
+        <ion-select-option value="">No Game Console</ion-select-option>
+        <ion-select-option value="nes">NES</ion-select-option>
+        <ion-select-option value="n64" selected>Nintendo64</ion-select-option>
+        <ion-select-option value="ps">PlayStation</ion-select-option>
+        <ion-select-option value="genesis">Sega Genesis</ion-select-option>
+        <ion-select-option value="saturn">Sega Saturn</ion-select-option>
+        <ion-select-option value="snes">SNES</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list> -->
+</ion-content>
+
+<!-- <ion-content>
     <ion-card class="welcome-card">
       <img src="/assets/shapes.svg" alt="" />
       <ion-card-header>
@@ -41,4 +236,4 @@
         <ion-label>Theme Your App</ion-label>
       </ion-item>
     </ion-list>
-</ion-content>
+</ion-content> -->
