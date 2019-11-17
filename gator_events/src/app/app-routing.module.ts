@@ -11,13 +11,20 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
-  {
-    path: 'list',
-    loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
+  // {
+  //   path: 'list',
+  //   loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
+  // },
+  { 
+    path: 'filter', loadChildren: './filter/filter.module#FilterPageModule' 
   },
-  { path: 'filter', loadChildren: './filter/filter.module#FilterPageModule' },
-  { path: 'register', loadChildren: './auth/register/register.module#RegisterPageModule' },
-  { path: 'login', loadChildren: './auth/login/login.module#LoginPageModule' }
+  { 
+    path: 'register', loadChildren: './auth/register/register.module#RegisterPageModule' 
+  },
+  { 
+    path: 'login', loadChildren: './auth/login/login.module#LoginPageModule' 
+  },
+  { path: 'event-detail', loadChildren: './event-detail/event-detail.module#EventDetailPageModule' }
 ];
 
 @NgModule({

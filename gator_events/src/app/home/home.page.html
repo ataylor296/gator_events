@@ -19,7 +19,30 @@
   <p *ngIf="dataReturned">{{dataReturned}}</p>
   
   <ion-searchbar animated value="Search by name or tag"></ion-searchbar>
-  <ion-card button="true">
+  <ion-list>
+      <ion-item detail="true" lines="inset" button="true" *ngFor="let item of events">
+        <!-- <ion-item lines= "inset" button [routerLink]="['/details', item.id]"> -->
+          <ion-label>
+            <div class="info">{{ item.organization }} | {{item.datentime}} | {{item.location}}</div>
+            <div class="event-title">{{ item.name }}</div>
+            <!-- <ion-chip color="secondary" outline="true">
+              <ion-icon name="code-working" color="secondary"></ion-icon>
+              <ion-label>Computer Science</ion-label>
+            </ion-chip> -->
+            <p>{{item.details}}</p>
+          </ion-label>
+      </ion-item>
+    
+        <ion-item-options side="end">
+          <!-- <ion-item-option (click)="remove(item)" color=secondary> -->
+          <ion-item-option color=secondary>
+            Check
+            <ion-icon name="checkmark" slot="end"></ion-icon>
+          </ion-item-option>
+        </ion-item-options> 
+    </ion-list>
+
+  <!-- <ion-card button="true">
       <ion-card-header>
         <div class="datetime">Women in Computer Science and Engineering    |   CSE404    |   09/27/2019  |   6:00 PM</div>
       </ion-card-header>
@@ -46,7 +69,6 @@
         <p>
           Come watch our weekly shows and learn some things about Japan! 
         </p>
-        <!-- <ion-spinner *ngIf="!articles"  name="dots"></ion-spinner> -->
         <ion-chip color="primary" outline="true">
           <ion-icon name="tv" color="primary"></ion-icon>
           <ion-label>Anime</ion-label>
@@ -73,12 +95,12 @@
   </ion-card>
   <ion-card button="true">
     <ion-card-header>
-      <div class="datetime">Women in Computer Science and Engineering    |   CSE404    |   09/27/2019  |   6:00 PM</div>
+      <div class="datetime">Women in Computer Science and Engineering    |   CSE404    |   10/27/2019  |   7:00 PM</div>
     </ion-card-header>
     <ion-card-content>
-      <ion-card-title>Mentorship Meet and Greet</ion-card-title>
+      <ion-card-title>GBM #3 - Web Hacking</ion-card-title>
       <p>
-        Come meet club officers and make some new friends, with food provided! 
+        Come out and learn how to hack with our friends from UFSIT. Food is provided! 
       </p>
       <ion-chip color="secondary" outline="true">
         <ion-icon name="code-working" color="secondary"></ion-icon>
@@ -98,7 +120,6 @@
       <p>
         Come watch our weekly shows and learn some things about Japan! 
       </p>
-      <!-- <ion-spinner *ngIf="!articles"  name="dots"></ion-spinner> -->
       <ion-chip color="primary" outline="true">
         <ion-icon name="tv" color="primary"></ion-icon>
         <ion-label>Anime</ion-label>
@@ -122,37 +143,7 @@
         <ion-label>Computer Science</ion-label>
       </ion-chip>
     </ion-card-content>
-</ion-card>
-
-<ion-list>
-  <ion-item-sliding *ngFor="let item of events">
-    <!-- <ion-item lines= "inset" button [routerLink]="['/details', item.id]"> -->
-    <ion-item lines= "inset">
-      <ion-label>
-        {{ item.name }}
-        <p>{{ item.createdAt | date:'short' }}</p>
-      </ion-label>
-      <ion-note slot="end" color="primary">
-        {{ item.organization }}
-      </ion-note>
-    </ion-item>
-
-    <ion-item-options side="end">
-      <!-- <ion-item-option (click)="remove(item)" color=secondary> -->
-      <ion-item-option color=secondary>
-        Check
-        <ion-icon name="checkmark" slot="end"></ion-icon>
-      </ion-item-option>
-    </ion-item-options> 
-  </ion-item-sliding>
-</ion-list>
-
-<ion-fab vertical="bottom" horizontal="end" slot="fixed">
-  <!-- <ion-fab-button routerLink="/details">
-    
-  </ion-fab-button> -->
-</ion-fab>
-
+</ion-card> -->
 
 
   <!-- <ion-list>

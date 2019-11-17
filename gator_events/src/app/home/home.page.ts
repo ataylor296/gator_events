@@ -23,9 +23,9 @@ export class HomePage
 
   ngOnInit() {
     this.menuCtrl.enable(true);
-    // // this.eventService.getEvents().subscribe(res => {
-    // //   this.events = res;
-    // })
+    this.eventService.getEvents().subscribe(res => {
+       this.events = res;
+    })
   };
 
   async presentModal() {
@@ -48,7 +48,7 @@ export class HomePage
     });
 
     // remove(item) {
-    //   this.eventService.removeEvent(item.id);
+    //  this.eventService.removeEvent(item.id);
     // }
 
     await modal.present();

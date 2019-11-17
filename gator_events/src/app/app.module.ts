@@ -14,6 +14,7 @@ import { HomePageModule } from './home/home.module';
 import { environment } from 'src/environments/environment';
 import { AuthenticateService } from './services/authentication.service';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import * as firebase from 'firebase';
 import { AngularFireModule } from '@angular/fire';
@@ -37,10 +38,12 @@ firebase.initializeApp(CREDENTIALS)
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
+    AngularFireModule.initializeApp(CREDENTIALS),
     AppRoutingModule,
     // HomePageModule,
     // FilterPageModule
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
   providers: [
     StatusBar,

@@ -17,15 +17,16 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
-    },
-    {
       /*Placeholder for calendar page*/
       title: 'Calendar',
-      url: '/home',
+      url: '/calendar',
       icon: 'calendar'
+    },
+    {
+      /*Placeholder for Create Event*/
+      title: 'Create New Event',
+      url: '/home',
+      icon: 'add-cirlce-outline'
     },
     {
       /*Still need to implement logout functionality*/
