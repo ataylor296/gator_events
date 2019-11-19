@@ -26,7 +26,7 @@ export class AppComponent {
       /*Placeholder for Create Event*/
       title: 'Create New Event',
       url: '/home',
-      icon: 'add-cirlce-outline'
+      icon: 'add-circle-outline'
     },
     {
       /*Still need to implement logout functionality*/

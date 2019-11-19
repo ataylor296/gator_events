@@ -24,7 +24,15 @@ const routes: Routes = [
   { 
     path: 'login', loadChildren: './auth/login/login.module#LoginPageModule' 
   },
-  { path: 'event-detail', loadChildren: './event-detail/event-detail.module#EventDetailPageModule' }
+  { 
+    path: 'detail', loadChildren: './event-detail/event-detail.module#EventDetailPageModule' 
+  },
+  { 
+    path: 'detail/:id', loadChildren: './event-detail/event-detail.module#EventDetailPageModule' 
+  },
+  { 
+    path: 'calendar', loadChildren: './calendar/calendar.module#CalendarPageModule' 
+  }
 ];
 
 @NgModule({

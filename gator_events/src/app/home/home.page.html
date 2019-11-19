@@ -15,15 +15,14 @@
     <h3>Welcome to Gator Events</h3>
     <h5>Find out about events going on all over campus. Use the 'Filter' button to narrow your selection.</h5>
   </div>
-  <ion-button expand="full" color="primary" (click)="presentModal()">Filter Options</ion-button>
+  <ion-button expand="full" color="primary" (click)="openFilter()">Filter Options</ion-button>
   <p *ngIf="dataReturned">{{dataReturned}}</p>
   
   <ion-searchbar animated value="Search by name or tag"></ion-searchbar>
   <ion-list>
-      <ion-item detail="true" lines="inset" button="true" *ngFor="let item of events">
-        <!-- <ion-item lines= "inset" button [routerLink]="['/details', item.id]"> -->
+      <ion-item detail="true" lines="inset" button [routerLink]="['/detail', item.id]" *ngFor="let item of events">
           <ion-label>
-            <div class="info">{{ item.organization }} | {{item.datentime}} | {{item.location}}</div>
+            <div class="info">{{ item.organization }} | {{ item.date }} | {{ item.time }} | {{ item.location }}</div>
             <div class="event-title">{{ item.name }}</div>
             <!-- <ion-chip color="secondary" outline="true">
               <ion-icon name="code-working" color="secondary"></ion-icon>

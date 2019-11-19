@@ -3,15 +3,18 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  apiKey: "AIzaSyBMRhqbe7qREyrUXNcDikq8FfIOtOhkLtU",
-  authDomain: "gator-events.firebaseapp.com",
-  databaseURL: "https://gator-events.firebaseio.com",
-  projectId: "gator-events",
-  storageBucket: "gator-events.appspot.com",
-  messagingSenderId: "665013836258",
-  appId: "1:665013836258:web:88eed018e2fc321827c1bb",
-  measurementId: "G-9B6ZRES3BL"
+firebase:
+  {  
+    production: false,
+    apiKey: "AIzaSyBMRhqbe7qREyrUXNcDikq8FfIOtOhkLtU",
+    authDomain: "gator-events.firebaseapp.com",
+    databaseURL: "https://gator-events.firebaseio.com",
+    projectId: "gator-events",
+    storageBucket: "gator-events.appspot.com",
+    messagingSenderId: "665013836258",
+    appId: "1:665013836258:web:88eed018e2fc321827c1bb",
+    measurementId: "G-9B6ZRES3BL"
+  }
 };
 
 // export const firebaseConfig = {

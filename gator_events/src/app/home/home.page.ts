@@ -28,7 +28,7 @@ export class HomePage
     })
   };
 
-  async presentModal() {
+  async openFilter() {
     const modal = await this.modalCtrl.create({
       component: FilterPage,
       // componentProps: 

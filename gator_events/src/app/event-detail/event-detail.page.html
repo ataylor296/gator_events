@@ -1,10 +1,26 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>event-detail</ion-title>
-    <ion-icon name="close" slot="start" button="true" (click)="closeModal()"></ion-icon>
+  <ion-toolbar color="primary">
+    <ion-title>Event Details</ion-title>
+      <ion-buttons slot="start">
+        <ion-button>
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+  <div class="center">
+    <div class="event-title">{{ event.name }}</div>
+    <div class="organization">{{ event.organization }}</div>
+    <div class="event-content">Date: {{ event.date }}</div>
+    <div class="event-content">Time: {{ event.time }}</div>
+    <div class="event-content">Location: {{ event.location }}</div>
+    <div class="event-content">Description: {{ event.details }}</div>
+    <p></p>
+    <ion-button expand="block">
+      <ion-icon name="Calendar" slot="start"></ion-icon>
+      Add to Calendar
+    </ion-button>
+  </div>
 </ion-content>

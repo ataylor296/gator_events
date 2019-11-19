@@ -9,6 +9,7 @@ export interface Event {
   time: string;
   location: string;
   organization: string;
+  details: string;
 }
 
 @Injectable({
